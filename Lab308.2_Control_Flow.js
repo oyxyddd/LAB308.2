@@ -11,8 +11,8 @@ let plantArea;
 let plantAreaRation;
 let action;
 //Loop through week 1,2,3 and console.log results
-for (let w = 0; w <=2; w++) { 
-    plantArea = plantNb * (plantGrowRate ** w) * spacePerPlant;
+for (let w = 1; w <=3; w++) { 
+    plantArea = plantNb * (plantGrowRate ** (w-1)) * spacePerPlant;
     plantAreaRation = Math.round((plantArea / area) * 100);
     if(plantAreaRation > 80){
         action = "Pruned";
@@ -24,4 +24,13 @@ for (let w = 0; w <=2; w++) {
     console.log(`On week${w+1}, planted plants take up ${plantAreaRation}% of available area.
     The recommended action is "${action}"`)
   }
-  
+
+  //Part2: Thinking Bigger
+  const newPlantNb = 100;
+  const week = 10;
+  plantArea = newPlantNb * (plantGrowRate ** (week-1)) * spacePerPlant; 
+  const additionalArea = Math.round(plantArea - area);
+  const newRadius = Math.round(Math.sqrt(plantArea / PI));
+  console.log(`The additional space required is ${additionalArea}. 
+  The radius of the expanded garden is ${newRadius}`)
+
