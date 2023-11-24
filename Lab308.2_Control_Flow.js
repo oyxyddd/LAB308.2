@@ -34,3 +34,14 @@ for (let w = 1; w <=3; w++) {
   console.log(`The additional space required is ${additionalArea}. 
   The radius of the expanded garden is ${newRadius}`)
 
+// Part3: Errors in Judgement
+try{
+    plantArea = newPlantNb * (plantGrowRate ** (1-1)) * spacePerPlant; 
+    if(plantArea < area){
+        console.log()
+    }else{
+        throw "Error-area is not big enough"
+    }
+} catch(error){
+    console.log(error);
+}
